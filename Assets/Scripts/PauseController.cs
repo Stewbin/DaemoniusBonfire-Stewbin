@@ -1,13 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PauseController : MonoBehaviour
 {
     [SerializeField] public GameObject pauseMenu;
-    bool paused = false;  
+    public bool paused = false;  
 
-    // Update is called once per frame
+    void Awake()
+    {
+        ResumeGame(); // Makes sure the game starts resumed
+    }
+
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -23,19 +30,28 @@ public class PauseController : MonoBehaviour
         }
     }
 
-    void PauseGame()
+    public void PauseGame()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         paused = true;
-        //GameManager.Instance.setGameState(GameState.Paused);
     }
 
-    void ResumeGame()
+    public void ResumeGame()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         paused = false;
-        //GameManager.Instance.setGameState(GameState.Gameplay);
+    }
+
+    public void GoToMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
