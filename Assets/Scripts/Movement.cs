@@ -81,12 +81,14 @@ public class Movement : MonoBehaviour
 			GetComponent<Rigidbody2D>().velocity = v;
 			GetComponent<Transform>().position = playerLocation;
 		}
+		
 		//this makes sure its valid
 		if (time > estimateFrames && isGrounded)
 		{
 			ResetJumps();
 			return;
 		}
+
 
 
 		time += 1;
@@ -96,7 +98,7 @@ public class Movement : MonoBehaviour
 	/// resets jump states.
 	/// </summary>
 
-	private void ResetJumps()
+	public void ResetJumps()
 	{
 		isJumping = false;
 		time = 1;

@@ -881,7 +881,7 @@ MonoBehaviour:
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
-  m_horizontalMapping: 3
+  m_horizontalMapping: 0
   m_verticalMapping: 3
   m_uvLineOffset: 1
   m_geometrySortingOrder: 0
@@ -2529,6 +2529,7 @@ GameObject:
   - component: {fileID: 2129691699}
   - component: {fileID: 2129691697}
   - component: {fileID: 2129691703}
+  - component: {fileID: 2129691704}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Player
@@ -2703,15 +2704,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129691695}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84315ba4dab8e6f478bab740c91b4ccb, type: 3}
+  m_Script: {fileID: 11500000, guid: 8637bf11fcb89ea4bb003f106ff1d1d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
-  speedX: 10
-  speedY: 8
-  rb: {fileID: 0}
+  rb: {fileID: 2129691700}
   isGrounded: 0
   isJumping: 0
   time: 1
@@ -2721,7 +2720,35 @@ MonoBehaviour:
   jumpState: 1
   animator: {fileID: 2129691697}
   targetVelocity: 0
-  coyoteTime: 0.05
+--- !u!114 &2129691704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129691695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84315ba4dab8e6f478bab740c91b4ccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: {x: 0, y: 0}
+  speedX: 10
+  speedY: 8
+  rb: {fileID: 2129691700}
+  isGrounded: 0
+  isJumping: 0
+  time: 1
+  DashTime: 1
+  Dash: 0
+  timePerJump: 0
+  jumpState: 1
+  animator: {fileID: 2129691697}
+  targetVelocity: 0
+  coyoteTime: 1
+  ctTime: 0
+  jumpBuffer: 1
+  jbTime: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
