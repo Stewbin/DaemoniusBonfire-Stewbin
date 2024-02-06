@@ -19,7 +19,12 @@ public class Controller : MonoBehaviour
 	public Animator animator;
 	public float targetVelocity;
 	void Update()
-	{	
+	{
+		//fixing bug I notcied when paused it still allowed flipping
+		if (GameStateMachine.gameState == GameState.DEAD || GameStateMachine.gameState == GameState.PAUSED)
+		{
+			return;
+		}
 		rb = GetComponent<Rigidbody2D>();
 		// animator.ResetTrigger("dash");
 
@@ -48,6 +53,8 @@ public class Controller : MonoBehaviour
 				jumpState = 2;
 				GetComponent<Rigidbody2D>().velocity = v;
 			}
+			rb.velocity = new Vector2(rb.velocity.x, -1);
+
 
 		}
 		if (Input.GetKeyDown(KeyCode.Space))
@@ -67,8 +74,8 @@ public class Controller : MonoBehaviour
 
 				if (timePerJump < 400)
 				{
-					timePerJump += 4;
-					timePerJump += timePerJump * Time.deltaTime;
+					// timePerJump += 4;
+					timePerJump += Time.deltaTime;
 				}
 			}
 		}
@@ -100,7 +107,7 @@ public class Controller : MonoBehaviour
 			HandleDash(20, playerLocation);
 		}
 
-		
+
 	}
 	/// <summary>
 	/// handles the jump of the player
@@ -189,7 +196,7 @@ public class Controller : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D other)
 	{
-		if (other.gameObject.tag == "floor")
+		if (other.gameObject.tag == "floor" || other.gameObject.tag == "climeBeam")  //hasmap :3
 		{
 
 

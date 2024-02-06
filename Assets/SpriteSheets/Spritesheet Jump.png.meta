@@ -65,7 +65,7 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -138,7 +138,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 5afdf62d3075ae6418beab049746daa8
-      internalID: -1269297850
+      internalID: 3540471552111674299
       vertices: []
       indices: 
       edges: []
@@ -159,7 +159,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 6137787df6d4cd5469b1712bf965ab21
-      internalID: -1062213712
+      internalID: -189262999141386824
       vertices: []
       indices: 
       edges: []
@@ -180,7 +180,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 3dd6b976637a43f4b8e8031d8f1a0288
-      internalID: -185531722
+      internalID: -7398661270967854847
       vertices: []
       indices: 
       edges: []
@@ -201,7 +201,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 31ce8ad18d6d73949ac3cafe7e2a422b
-      internalID: -592761435
+      internalID: -6887688684772952549
       vertices: []
       indices: 
       edges: []
@@ -222,7 +222,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b650ab7a7edaec24daf46c6ada4bba68
-      internalID: 1832190252
+      internalID: -7809643571629112988
       vertices: []
       indices: 
       edges: []
@@ -243,7 +243,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 6e79c7a1fe0a54c40b44fddb005f7641
-      internalID: 889626073
+      internalID: -6808499280862884669
       vertices: []
       indices: 
       edges: []
@@ -259,12 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Spritesheet Jump_0: -1269297850
-      Spritesheet Jump_1: -1062213712
-      Spritesheet Jump_2: -185531722
-      Spritesheet Jump_3: -592761435
-      Spritesheet Jump_4: 1832190252
-      Spritesheet Jump_5: 889626073
+      Spritesheet Jump_0: 3540471552111674299
+      Spritesheet Jump_1: -189262999141386824
+      Spritesheet Jump_2: -7398661270967854847
+      Spritesheet Jump_3: -6887688684772952549
+      Spritesheet Jump_4: -7809643571629112988
+      Spritesheet Jump_5: -6808499280862884669
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

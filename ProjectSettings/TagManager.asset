@@ -6,6 +6,7 @@ TagManager:
   tags:
   - floor
   - InstaDeath
+  - climeBeam
   layers:
   - Default
   - TransparentFX
