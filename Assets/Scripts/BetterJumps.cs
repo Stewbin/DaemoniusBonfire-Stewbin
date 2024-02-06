@@ -13,6 +13,7 @@ public class BetterJumps : MonoBehaviour
 	public float jumpTime = 7.0f;
 	public bool isJumping;
 	public bool isGrounded = false;
+	public bool isDashing = false;
 	public Animator animator;
 	// private float TargetVelocity;
 	void Start()
@@ -34,6 +35,11 @@ public class BetterJumps : MonoBehaviour
 			if (rb.velocity.y > -0.00001f)
 				rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * -1.0f);
 		}
+		if (Input.GetKey(KeyCode.X))
+		{
+			HandleDash();
+		}
+
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			if (isGrounded && !isJumping)
@@ -54,7 +60,8 @@ public class BetterJumps : MonoBehaviour
 		{
 			isJumping = false;
 		}
-		isGrounded = (int)rb.velocity.y < 2.0f && (int)rb.velocity.y > -2.0f;
+		// if (!isJumping)
+		// 	isGrounded = (int)rb.velocity.y < 2.0f && (int)rb.velocity.y > -2.0f;
 
 	}
 	public void HandleJump()
@@ -73,6 +80,11 @@ public class BetterJumps : MonoBehaviour
 	}
 	public void HandleDash()
 	{
+		isDashing = true;
+		if (GetComponent<SpriteRenderer>().flipX)
+			rb.velocity = new Vector2((velocity.x + 1) * -15, rb.velocity.y);
+		else
+			rb.velocity = new Vector2((velocity.x + 1) * 15, rb.velocity.y);
 
 	}
 	public void CalcTargetVelocity()
@@ -85,4 +97,15 @@ public class BetterJumps : MonoBehaviour
 		// GetComponent<SpriteRenderer>().flipX = targetVelocity > 0;
 
 	}
+	private void OnCollisionStay2D(Collision2D other)
+	{
+		if (other.gameObject.tag == "floor")
+			isGrounded = true;
+	}
+	private void OnCollisionExit2D(Collision2D other)
+	{
+		if (other.gameObject.tag == "floor")
+			isGrounded = false;
+	}
+
 }
