@@ -26,17 +26,29 @@ public class Spider : MonoBehaviour
     {
 
 
-        CheckCollision(); 
+        CheckCollision();  
          SpiderPatrolling(); 
         
     }
 
     public void SpiderPatrolling()
     {
-        spiderSpeed = -2.0f;
+        spiderSpeed = 2.0f;
 
         Vector2 point = currentPoint.position - transform.position; 
-        spiderBody.velocity = new Vector2 (spiderSpeed, spiderBody.velocity.y);
+       
+        if (currentPoint == pointB.transform)
+        {
+            spiderBody.velocity = new Vector2(spiderSpeed, 0);
+        } else
+        {
+            spiderBody.velocity = new Vector2(-spiderSpeed, 0);
+        }
+
+        if(Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint ==pointB.transform)
+        {
+            currentPoint = pointA.transform; 
+        }
     }
 
     public void CheckCollision()
