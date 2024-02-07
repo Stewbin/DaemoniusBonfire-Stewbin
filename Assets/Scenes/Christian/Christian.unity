@@ -244,8 +244,8 @@ GameObject:
   - component: {fileID: 1048576334}
   - component: {fileID: 1048576336}
   - component: {fileID: 1048576335}
-  - component: {fileID: 1048576337}
   - component: {fileID: 1048576338}
+  - component: {fileID: 1048576337}
   m_Layer: 0
   m_Name: Elkan
   m_TagString: Untagged
@@ -260,12 +260,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048576332}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.08, y: 0.645, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.3151026, y: 0.7101979, z: -2.1860065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1740523283}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1048576334
 SpriteRenderer:
@@ -364,20 +364,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1048576332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8637bf11fcb89ea4bb003f106ff1d1d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 18542cf519f1fde45836f13687f4be62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: 0, y: 0}
-  rb: {fileID: 1048576336}
-  isGrounded: 0
-  isJumping: 0
-  time: 1
-  DashTime: 1
-  Dash: 0
-  timePerJump: 0
-  jumpState: 1
-  animator: {fileID: 0}
-  targetVelocity: 0
+  thisObject: {fileID: 1048576332}
 --- !u!95 &1048576338
 Animator:
   serializedVersion: 3
@@ -408,6 +398,9 @@ GameObject:
   - component: {fileID: 1201390744}
   - component: {fileID: 1201390745}
   - component: {fileID: 1201390746}
+  - component: {fileID: 1201390749}
+  - component: {fileID: 1201390748}
+  - component: {fileID: 1201390747}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Untagged
@@ -423,7 +416,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1201390743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.73, y: -0.83, z: 0}
+  m_LocalPosition: {x: 2.09, y: -0.65, z: 0}
   m_LocalScale: {x: 0.34903634, y: 0.34903634, z: 0.34903634}
   m_Children: []
   m_Father: {fileID: 1285443798}
@@ -499,6 +492,68 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &1201390747
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201390743}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000023841858, y: -2.0959764}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 1}
+    oldSize: {x: 8, y: 5.06}
+    newSize: {x: 8, y: 5.0625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.823938, y: 3.2959068}
+  m_EdgeRadius: 0
+--- !u!50 &1201390748
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201390743}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1201390749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201390743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ceed64716c664c4a8c4b0423e0bdb83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spiderSpeed: 0
+  spider: {fileID: 0}
+  spiderBody: {fileID: 0}
 --- !u!1 &1285443797
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,7 +583,7 @@ Transform:
   m_Children:
   - {fileID: 1201390744}
   m_Father: {fileID: 1740523283}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1740523282
 GameObject:
@@ -558,7 +613,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 737003402}
-  - {fileID: 1048576333}
   - {fileID: 1285443798}
   m_Father: {fileID: 0}
   m_RootOrder: 1
