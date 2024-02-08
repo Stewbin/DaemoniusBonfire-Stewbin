@@ -27,7 +27,7 @@ public class BetterJumps : MonoBehaviour
 	void Update()
 	{
 		// animator.SetBool("isJumping", isJumping || !isGrounded); // is Jumping or is Falling
-		animator.SetFloat("walk", Mathf.Abs(rb.velocity.x)); //I couldnt help myself T~T
+		// animator.SetFloat("walk", Mathf.Abs(rb.velocity.x)); //I couldnt help myself T~T
 
 		rb = GetComponent<Rigidbody2D>();
 		CalcTargetVelocity();
@@ -66,75 +66,25 @@ public class BetterJumps : MonoBehaviour
 		}
 
 
-		// if (Input.GetKeyDown(KeyCode.Space))
-		// {
-		// 	if (isGrounded && !isJumping)
-		// 	{
-		// 		isJumping = true;
-		// 		jumpTime = 7.0f;
-
-		// 	}
-		// }
-		// if (Input.GetKey(KeyCode.Space))
-		// {
-		// 	if (isJumping)
-		// 	{
-		// 		HandleJump();
-		// 	}
-		// 	else
-		// 	{
-		// 		// rb.velocity = new Vector2(rb.velocity.x, -20.0f);`
-
-		// 	}
-		// }
-		else
-		{
-
-			// isJumping = false;
-			// if (!isGrounded)
-			// 	rb.velocity = new Vector2(rb.velocity.x, -20.0f);
-		}
-		// if (!isJumping)
-		// 	isGrounded = (int)rb.velocity.y < 2.0f && (int)rb.velocity.y > -2.0f;
-
 	}
 	private void FixedUpdate()
 	{
 		// rb.AddForce();
-		if (falling || rb.velocity.y < 0)
+		if (falling || rb.velocity.y < 0) //this makes object heavy ;3
 		{
 			rb.AddForce(Vector2.down * fallSpeed);
 		}
 	}
 	public void HandleJump()
 	{
-		// if (jumpTime > 8.0f)
-		// {
-		// 	// jumpTime = 9.0f;
-		// 	// rb.velocity = new Vector2(rb.velocity.x, -jumpTime);
-		// 	isJumping = false;
-		// 	jumpTime = 7.0f;
-		// 	// rb.velocity = new Vector2(rb.velocity.x, -20.0f);
-		// 	// rb.velocity = new Vector2(rb.velocity.x, -jumpTime);
-		// 	return;
-		// }
-		// if (jumpTime > 7.25f)
-		// {
-		// 	isJumping = false;
-		// 	jumpTime = 7.0f;
-		// 	return;
-		// }
+
 		if (jumpTime > 2.5)
 		{
 			isJumping = false;
 			falling = true;
 			return;
 		}
-
-
-		// rb.AddForce(Vector2.up * 35, ForceMode2D.Impulse);
 		jumpTime += Time.deltaTime;
-		// rb.velocity = new Vector2(rb.velocity.x, 8.0f);
 
 	}
 	public void HandleDash()
