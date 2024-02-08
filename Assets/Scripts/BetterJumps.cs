@@ -9,13 +9,14 @@ public class BetterJumps : MonoBehaviour
 	public float velocityY;
 	public Vector2 velocity;
 	private float targetVelocity;
-	public float jumpForce = 7.0f;
-	public float jumpTime = 7.0f;
+	public float jumpTime;
 	public bool isJumping;
 	public bool isGrounded = false;
 	public bool isDashing = false;
 	public Animator animator;
-	// private float TargetVelocity;
+	bool falling = false;
+	public float jumpSpeed;
+	public float fallSpeed;
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
@@ -25,58 +26,116 @@ public class BetterJumps : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		animator.SetBool("isJumping", isJumping || !isGrounded); // is Jumping or is Falling
+		// animator.SetBool("isJumping", isJumping || !isGrounded); // is Jumping or is Falling
 		animator.SetFloat("walk", Mathf.Abs(rb.velocity.x)); //I couldnt help myself T~T
 
 		rb = GetComponent<Rigidbody2D>();
 		CalcTargetVelocity();
 		if (Input.GetKey(KeyCode.S))
 		{
-			if (rb.velocity.y > -0.00001f)
-				rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * -1.0f);
+			falling = true;
 		}
 		if (Input.GetKey(KeyCode.X))
 		{
 			HandleDash();
 		}
-
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			if (isGrounded && !isJumping)
 			{
 				isJumping = true;
-				jumpTime = 7.0f;
-
+				falling = false;
+				jumpTime = 0.0f;
+			}
+			if (isJumping)
+			{
+				float jumpForce = Mathf.Sqrt(jumpSpeed * -2 * (Physics2D.gravity.y * rb.gravityScale));
+				rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
 			}
 		}
 		if (Input.GetKey(KeyCode.Space))
 		{
 			if (isJumping)
-			{
 				HandleJump();
-			}
 		}
-		else
+		if (Input.GetKeyUp(KeyCode.Space))
 		{
 			isJumping = false;
+			falling = true;
+			jumpTime = 0.0f;
+		}
+
+
+		// if (Input.GetKeyDown(KeyCode.Space))
+		// {
+		// 	if (isGrounded && !isJumping)
+		// 	{
+		// 		isJumping = true;
+		// 		jumpTime = 7.0f;
+
+		// 	}
+		// }
+		// if (Input.GetKey(KeyCode.Space))
+		// {
+		// 	if (isJumping)
+		// 	{
+		// 		HandleJump();
+		// 	}
+		// 	else
+		// 	{
+		// 		// rb.velocity = new Vector2(rb.velocity.x, -20.0f);`
+
+		// 	}
+		// }
+		else
+		{
+
+			// isJumping = false;
+			// if (!isGrounded)
+			// 	rb.velocity = new Vector2(rb.velocity.x, -20.0f);
 		}
 		// if (!isJumping)
 		// 	isGrounded = (int)rb.velocity.y < 2.0f && (int)rb.velocity.y > -2.0f;
 
 	}
+	private void FixedUpdate()
+	{
+		// rb.AddForce();
+		if (falling || rb.velocity.y < 0)
+		{
+			rb.AddForce(Vector2.down * fallSpeed);
+		}
+	}
 	public void HandleJump()
 	{
-		if (jumpTime > 7.5f)
+		// if (jumpTime > 8.0f)
+		// {
+		// 	// jumpTime = 9.0f;
+		// 	// rb.velocity = new Vector2(rb.velocity.x, -jumpTime);
+		// 	isJumping = false;
+		// 	jumpTime = 7.0f;
+		// 	// rb.velocity = new Vector2(rb.velocity.x, -20.0f);
+		// 	// rb.velocity = new Vector2(rb.velocity.x, -jumpTime);
+		// 	return;
+		// }
+		// if (jumpTime > 7.25f)
+		// {
+		// 	isJumping = false;
+		// 	jumpTime = 7.0f;
+		// 	return;
+		// }
+		if (jumpTime > 2.5)
 		{
-			// jumpTime = 9.0f;
-			// rb.velocity = new Vector2(rb.velocity.x, -jumpTime);
 			isJumping = false;
-			jumpTime = 7.0f;
-			// rb.velocity = new Vector2(rb.velocity.x, -jumpTime);
+			falling = true;
 			return;
 		}
+
+
+		// rb.AddForce(Vector2.up * 35, ForceMode2D.Impulse);
 		jumpTime += Time.deltaTime;
-		rb.velocity = new Vector2(rb.velocity.x, jumpTime);
+		// rb.velocity = new Vector2(rb.velocity.x, 8.0f);
+
 	}
 	public void HandleDash()
 	{
@@ -101,10 +160,19 @@ public class BetterJumps : MonoBehaviour
 	{
 		if (other.gameObject.tag == "floor")
 			isGrounded = true;
+
+	}
+	private void OnCollisionEnter2D(Collision2D other)
+	{
+		if (isJumping)
+		{
+			Debug.Log("test");
+			isJumping = false;
+		}
 	}
 	private void OnCollisionExit2D(Collision2D other)
 	{
-		if (other.gameObject.tag == "floor")
+		if (other.gameObject.tag == "floor") //use a hashmap of values that are like a ground (or create ground layer)
 			isGrounded = false;
 	}
 
