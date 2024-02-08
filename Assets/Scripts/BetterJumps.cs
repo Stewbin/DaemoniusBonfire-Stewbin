@@ -26,8 +26,8 @@ public class BetterJumps : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		// animator.SetBool("isJumping", isJumping || !isGrounded); // is Jumping or is Falling
-		// animator.SetFloat("walk", Mathf.Abs(rb.velocity.x)); //I couldnt help myself T~T
+		animator.SetBool("isJumping", isJumping || !isGrounded);
+		animator.SetFloat("walk", Mathf.Abs(rb.velocity.x));
 
 		rb = GetComponent<Rigidbody2D>();
 		CalcTargetVelocity();
