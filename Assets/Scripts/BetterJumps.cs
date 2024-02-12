@@ -14,7 +14,7 @@ public class BetterJumps : MonoBehaviour
 	public bool isGrounded = false;
 	public bool isDashing = false;
 	public Animator animator;
-	bool falling = false;
+	public bool falling = false;
 	public float jumpSpeed;
 	public float fallSpeed;
 	void Start()
@@ -78,7 +78,7 @@ public class BetterJumps : MonoBehaviour
 	public void HandleJump()
 	{
 
-		if (jumpTime > 2.5)
+		if (jumpTime >= 2.5)
 		{
 			isJumping = false;
 			falling = true;
