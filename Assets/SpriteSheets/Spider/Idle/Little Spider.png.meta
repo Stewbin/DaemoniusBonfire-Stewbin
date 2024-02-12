@@ -1,0 +1,495 @@
+fileFormatVersion: 2
+guid: c13290d0a67fb9e4db9e726530ed371f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7163739851322480104
+    second: Little Spider_0
+  - first:
+      213: -1979645849579778205
+    second: Little Spider_1
+  - first:
+      213: 5225259371484994464
+    second: Little Spider_2
+  - first:
+      213: -451137461504034998
+    second: Little Spider_3
+  - first:
+      213: -5089620060440904321
+    second: Little Spider_4
+  - first:
+      213: -4914090327618111410
+    second: Little Spider_5
+  - first:
+      213: -6193470821054518390
+    second: Little Spider_6
+  - first:
+      213: -106923211465510058
+    second: Little Spider_7
+  - first:
+      213: 4180435289898138105
+    second: Little Spider_8
+  - first:
+      213: -4240277118217167503
+    second: Little Spider_9
+  - first:
+      213: 1507614601412167906
+    second: Little Spider_10
+  - first:
+      213: 803010547680213281
+    second: Little Spider_11
+  - first:
+      213: -1884344968253410655
+    second: Little Spider_12
+  - first:
+      213: -4588215562719521817
+    second: Little Spider_13
+  - first:
+      213: 6256549572412816527
+    second: Little Spider_14
+  - first:
+      213: -5060938733036229954
+    second: Little Spider_15
+  - first:
+      213: -8414235536813470889
+    second: Little Spider_16
+  - first:
+      213: -940452497250446887
+    second: Little Spider_17
+  - first:
+      213: 7332820921065368909
+    second: Little Spider_18
+  - first:
+      213: -3747755110297397452
+    second: Little Spider_19
+  - first:
+      213: 138643837352810867
+    second: Little Spider_20
+  - first:
+      213: -5631496393414004322
+    second: Little Spider_21
+  - first:
+      213: 5355523322649442827
+    second: Little Spider_22
+  - first:
+      213: 7466200338853990794
+    second: Little Spider_23
+  - first:
+      213: -4401230554299692783
+    second: Little Spider_24
+  - first:
+      213: -5481869810574099230
+    second: Little Spider_25
+  - first:
+      213: -8530276848349382459
+    second: Little Spider_26
+  - first:
+      213: 3418797606469672631
+    second: Little Spider_27
+  - first:
+      213: 1159619034095131267
+    second: Little Spider_28
+  - first:
+      213: -5993917452349612461
+    second: Little Spider_29
+  - first:
+      213: -8765261516356451609
+    second: Little Spider_30
+  - first:
+      213: 703445870751363233
+    second: Little Spider_31
+  - first:
+      213: -1994064735649196923
+    second: Little Spider_32
+  - first:
+      213: -2980818100111089952
+    second: Little Spider_33
+  - first:
+      213: -9012151985168810417
+    second: Little Spider_34
+  - first:
+      213: -4325229457162886010
+    second: Little Spider_35
+  - first:
+      213: 6503880304024168218
+    second: Little Spider_36
+  - first:
+      213: -3785308036884729223
+    second: Little Spider_37
+  - first:
+      213: 6394647032065532025
+    second: Little Spider_38
+  - first:
+      213: -7555868475985702355
+    second: Little Spider_39
+  - first:
+      213: 1284044964473991689
+    second: Little Spider_40
+  - first:
+      213: 4343615459532274242
+    second: Little Spider_41
+  - first:
+      213: 4091859826210199328
+    second: Little Spider_42
+  - first:
+      213: 4319335104463227554
+    second: Little Spider_43
+  - first:
+      213: -1936748598993200794
+    second: Little Spider_44
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 2
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Little Spider_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 800
+        height: 506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a2d927f88459c90800000000000000
+      internalID: -7163739851322480104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Spider_1
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 800
+        height: 506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36f88b2a692e684e0800000000000000
+      internalID: -1979645849579778205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Spider_2
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 800
+        height: 506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0abd4a8b6b9d38840800000000000000
+      internalID: 5225259371484994464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Spider_3
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 800
+        height: 506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a473e267edc3db9f0800000000000000
+      internalID: -451137461504034998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Spider_4
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 800
+        height: 506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7db7bf55890e59b0800000000000000
+      internalID: -5089620060440904321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Spider_5
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 800
+        height: 506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e48b32c02e4adcbb0800000000000000
+      internalID: -4914090327618111410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Spider_6
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 0
+        width: 800
+        height: 506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8b6c484a1f5c0aa0800000000000000
+      internalID: -6193470821054518390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Spider_7
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 0
+        width: 800
+        height: 506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 653ba5ad7e1248ef0800000000000000
+      internalID: -106923211465510058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Spider_8
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 0
+        width: 800
+        height: 506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f9b2ec4fb3e30a30800000000000000
+      internalID: 4180435289898138105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Spider_9
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 0
+        width: 800
+        height: 506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17dd27b4d628725c0800000000000000
+      internalID: -4240277118217167503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Spider_10
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 0
+        width: 800
+        height: 506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e84d570e7f1ce410800000000000000
+      internalID: 1507614601412167906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little Spider_11
+      rect:
+        serializedVersion: 2
+        x: 8800
+        y: 0
+        width: 800
+        height: 506
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 129fe5da6ddd42b00800000000000000
+      internalID: 803010547680213281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
