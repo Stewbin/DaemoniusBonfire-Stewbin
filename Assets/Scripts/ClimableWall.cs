@@ -28,7 +28,7 @@ public class ClimableWall : MonoBehaviour
 			if (Mathf.Approximately(angle, 90) && Input.GetKey(KeyCode.F))
 			{
 
-				rb.velocity = new Vector2(rb.velocity.x, 2.0f);
+				rb.velocity = new Vector2(rb.velocity.x, 5.0f);
 				if (Input.GetKey(KeyCode.RightShift))
 					rb.velocity = new Vector2(rb.velocity.x, 0.0f);
 				// Debug.Log("can climb");
