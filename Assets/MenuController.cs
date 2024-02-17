@@ -37,7 +37,7 @@ public class MenuController : MonoBehaviour
     {
         optionsPanel.SetActive(true);
         titlePanel.SetActive(false);
-        Debug.Log("Butt was pressed");
+        // Debug.Log("options was pressed");
     }
     
     // Quits the game in a build
