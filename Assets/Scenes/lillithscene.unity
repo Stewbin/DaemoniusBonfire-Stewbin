@@ -462,7 +462,9 @@ MonoBehaviour:
   isGrounded: 0
   isDashing: 0
   animator: {fileID: 401099524}
+  falling: 0
   jumpSpeed: 8
+  walkSpeed: 30
   fallSpeed: 50
 --- !u!1 &645885129
 GameObject:
@@ -616,7 +618,9 @@ MonoBehaviour:
   isGrounded: 0
   isDashing: 0
   animator: {fileID: 0}
+  falling: 0
   jumpSpeed: 0
+  walkSpeed: 0
   fallSpeed: 0
 --- !u!114 &645885135
 MonoBehaviour:
