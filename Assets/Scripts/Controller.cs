@@ -6,6 +6,8 @@ public class Controller : MonoBehaviour
 {
 	[SerializeField]
 	private Vector2 velocity; //players x, y velocity
+	private float speedX = 10;
+	private float speedY = 8;
 	public Rigidbody2D rb;
 	public bool isGrounded; //is grounded
 	public bool isJumping; // isJumping
@@ -19,15 +21,15 @@ public class Controller : MonoBehaviour
 	void Update()
 	{
 		//fixing bug I notcied when paused it still allowed flipping
-		if (GameStateMachine.gameState == GameState.DEAD || GameStateMachine.gameState == GameState.PAUSED)
+		/*if (GameStateMachine.gameState == GameState.DEAD || GameStateMachine.gameState == GameState.PAUSED)
 		{
 			return;
-		}
+		}*/
 		rb = GetComponent<Rigidbody2D>();
 		// animator.ResetTrigger("dash");
 
 		animator.SetFloat("walk", Mathf.Abs(Input.GetAxisRaw("Horizontal") * 1)); //I couldnt help myself T~T
-		targetVelocity = Input.GetAxisRaw("Horizontal") * velocity.x;
+		targetVelocity = Input.GetAxisRaw("Horizontal") * speedX;
 
 		Vector2 playerLocation = GetComponent<Transform>().position;
 		rb.velocity = new Vector2(targetVelocity, rb.velocity.y);
@@ -47,7 +49,7 @@ public class Controller : MonoBehaviour
 			{
 
 				Vector2 v = GetComponent<Rigidbody2D>().velocity;
-				v.y -= velocity.y;
+				v.y -= speedY;
 				jumpState = 2;
 				GetComponent<Rigidbody2D>().velocity = v;
 			}
@@ -127,12 +129,12 @@ public class Controller : MonoBehaviour
 		}
 		if (!GetComponent<SpriteRenderer>().flipX)
 		{
-			rb.velocity = new Vector2(velocity.x * 10, rb.velocity.y);
+			rb.velocity = new Vector2(speedX* 10, rb.velocity.y);
 
 		}
 		else
 		{
-			rb.velocity = new Vector2(velocity.x * -10, rb.velocity.y);
+			rb.velocity = new Vector2(speedX* -10, rb.velocity.y);
 
 		}
 		GetComponent<Transform>().position = playerLocation;
@@ -155,17 +157,17 @@ public class Controller : MonoBehaviour
 				}
 			}
 			//jumping
-			playerLocation.y += velocity.y * Time.deltaTime;
-			v.y += velocity.y * Time.deltaTime;
+			playerLocation.y += speedY * Time.deltaTime;
+			v.y += speedY * Time.deltaTime;
 			GetComponent<Transform>().position = playerLocation;
 			GetComponent<Rigidbody2D>().velocity = v;
 		}
 		else if (jumpState == 2)
 		{
 			//falling
-			playerLocation.y -= velocity.y * Time.deltaTime;
+			playerLocation.y -= speedY * Time.deltaTime;
 
-			v.y = (velocity.y - v.y) * Time.deltaTime;  //velocity*time + ((G * time^2)/2) good formula for jumps
+			v.y = (speedY - v.y) * Time.deltaTime;  //velocity*time + ((G * time^2)/2) good formula for jumps
 			GetComponent<Rigidbody2D>().velocity = v;
 			GetComponent<Transform>().position = playerLocation;
 		}
@@ -207,6 +209,7 @@ public class Controller : MonoBehaviour
 				isGrounded = true;
 				animator.SetBool("isJumping", isJumping);
 			}
+			/*
 			else if (Mathf.Approximately(angle, 180) || Mathf.Approximately(angle, 90))  //if roof collison
 			{
 				//Up
@@ -216,6 +219,7 @@ public class Controller : MonoBehaviour
 
 				}
 			}
+			*/
 		}
 	}
 
