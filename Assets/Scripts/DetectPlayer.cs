@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 public class DetectPlayer : MonoBehaviour
@@ -9,12 +10,13 @@ public class DetectPlayer : MonoBehaviour
     private PlatformEffector2D effector;
     public float WaitTime = 0.2f;
     float waitTimer;
-    
+    private Animator animator;    
     
     // Start is called before the first frame update
     void Start()
     {
         effector = GetComponent<PlatformEffector2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -32,7 +34,7 @@ public class DetectPlayer : MonoBehaviour
             }
         } 
 
-        if(Input.GetKeyUp(KeyCode.S))
+        if(Input.GetKeyUp(KeyCode.S) && !animator.GetCurrentAnimatorStateInfo(0).IsName("Midair Idle"))
         {
             effector.rotationalOffset = 0; // Reset platform detection after release S
             waitTimer = WaitTime; // Reset counter 

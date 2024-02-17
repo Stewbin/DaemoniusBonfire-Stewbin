@@ -13,9 +13,11 @@ public class KillPlayer : MonoBehaviour
         CurrentScene = SceneManager.GetActiveScene().name;
     }
 
+    // Reloads the current scene
+    // *dying & restarting
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if(collision.CompareTag("InstaDeath"))
         {
             SceneManager.LoadScene(CurrentScene);
         }

@@ -21,10 +21,10 @@ public class Controller : MonoBehaviour
 	void Update()
 	{
 		//fixing bug I notcied when paused it still allowed flipping
-		if (GameStateMachine.gameState == GameState.DEAD || GameStateMachine.gameState == GameState.PAUSED)
+		/*if (GameStateMachine.gameState == GameState.DEAD || GameStateMachine.gameState == GameState.PAUSED)
 		{
 			return;
-		}
+		}*/
 		rb = GetComponent<Rigidbody2D>();
 		// animator.ResetTrigger("dash");
 

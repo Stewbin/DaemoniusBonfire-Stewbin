@@ -180,6 +180,8 @@ GameObject:
   - component: {fileID: 3296735754675877289}
   - component: {fileID: 2210582811625660707}
   - component: {fileID: 7828195985416575482}
+  - component: {fileID: 4183288661850103787}
+  - component: {fileID: 3177849857035215279}
   m_Layer: 0
   m_Name: Oneway Platform
   m_TagString: floor
@@ -310,7 +312,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 5f401fa9c0c863d448aa0fd92b8daafa, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 2e6dd94006721674a9ac3129be1d8f05, type: 3}
   m_Color: {r: 0, g: 0.52642137, b: 0.8962264, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -321,6 +323,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4183288661850103787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3087114447105117331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e257d26bbe23f947b6ed5ec2e27a0ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effector: {fileID: 2210582811625660707}
+  WaitTime: 0.2
+--- !u!95 &3177849857035215279
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3087114447105117331}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b847c94390223e84a867a07ef7a95b53, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6106059861341459886
 GameObject:
   m_ObjectHideFlags: 0

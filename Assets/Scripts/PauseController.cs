@@ -1,15 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 
 public class PauseController : MonoBehaviour
 {
-    [SerializeField] public GameObject pauseMenu;
+    [SerializeField] 
+    public GameObject overlay;
     public bool paused = false;  
 
-    void Awake()
+
+    void Start()
     {
         ResumeGame(); // Makes sure the game starts resumed
     }
@@ -32,22 +37,24 @@ public class PauseController : MonoBehaviour
 
     public void PauseGame()
     {
-        pauseMenu.SetActive(true);
+        overlay.SetActive(true);
         Time.timeScale = 0f;
         paused = true;
     }
 
     public void ResumeGame()
     {
-        pauseMenu.SetActive(false);
+        overlay.SetActive(false);
         Time.timeScale = 1f;
         paused = false;
+        Debug.Log("Resume button was pressed");
     }
 
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MainMenu");
+        Debug.Log("MM button was pressed");
     }
 
     public void QuitGame()
