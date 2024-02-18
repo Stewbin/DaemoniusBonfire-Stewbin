@@ -4,12 +4,14 @@ using System.Drawing.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Script should be attached to the player GObject
 public class KillPlayer : MonoBehaviour
 { 
-    private string CurrentScene ;
+    private string CurrentScene;
 
     void Start()
     {
+        // Will fetch the name of the current scene as a string
         CurrentScene = SceneManager.GetActiveScene().name;
     }
 
@@ -17,9 +19,15 @@ public class KillPlayer : MonoBehaviour
     // *dying & restarting
     void OnTriggerEnter2D(Collider2D collision)
     {
+        // Will kill player if they touch something tagged InstaDeath
         if(collision.CompareTag("InstaDeath"))
         {
-            SceneManager.LoadScene(CurrentScene);
+            KillElkan();   
         }
+    }
+
+    public void KillElkan()
+    {
+        SceneManager.LoadScene(CurrentScene);
     }
 }
