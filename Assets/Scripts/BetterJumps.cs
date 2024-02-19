@@ -16,7 +16,10 @@ public class BetterJumps : MonoBehaviour
 	public Animator animator;
 	public bool falling = false;
 	public float jumpSpeed;
+	bool dashing = false;
+	public float walkSpeed;
 	public float fallSpeed;
+	private float accel = 0.5f;
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
@@ -26,32 +29,23 @@ public class BetterJumps : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		if (dashing) return;
 		animator.SetBool("isJumping", isJumping || !isGrounded);
-		animator.SetFloat("walk", Mathf.Abs(rb.velocity.x));
+		animator.SetFloat("walk", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
 
 		rb = GetComponent<Rigidbody2D>();
-		CalcTargetVelocity();
+		CalcTargetVelocity(Input.GetAxisRaw("Horizontal"));
 		if (Input.GetKey(KeyCode.S))
 		{
 			falling = true;
 		}
-		if (Input.GetKey(KeyCode.X))
-		{
-			HandleDash();
-		}
+		// if (Input.GetKey(KeyCode.X))
+		// {
+		// 	HandleDash();
+		// }
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			if (isGrounded && !isJumping)
-			{
-				isJumping = true;
-				falling = false;
-				jumpTime = 0.0f;
-			}
-			if (isJumping)
-			{
-				float jumpForce = Mathf.Sqrt(jumpSpeed * -2 * (Physics2D.gravity.y * rb.gravityScale));
-				rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-			}
+			SetJump();
 		}
 		if (Input.GetKey(KeyCode.Space))
 		{
@@ -64,15 +58,54 @@ public class BetterJumps : MonoBehaviour
 			falling = true;
 			jumpTime = 0.0f;
 		}
+		if (Input.GetKeyDown(KeyCode.X))
+		{
+			if (!dashing)
+				StartCoroutine(Dash());
+
+		}
 
 
 	}
 	private void FixedUpdate()
 	{
 		// rb.AddForce();
+		// if (isGrounded)
+		// 	falling = false;
+		if (dashing) return;
 		if (falling || rb.velocity.y < 0) //this makes object heavy ;3
 		{
+
 			rb.AddForce(Vector2.down * fallSpeed);
+		}
+	}
+	public IEnumerator Dash()
+	{
+		float ogGrav = rb.gravityScale;
+		rb.gravityScale = 0f;
+		if (GetComponent<SpriteRenderer>().flipX)
+			rb.velocity = new Vector2(transform.localScale.x * -100.0f, rb.velocity.y);
+		else
+			rb.velocity = new Vector2(transform.localScale.x * 100.0f, rb.velocity.y);
+		dashing = true;
+		yield return new WaitForSeconds(1.0f);
+		rb.velocity = Vector2.zero;
+		rb.gravityScale = ogGrav;
+		dashing = false;
+
+	}
+	public void SetJump()
+	{
+		if (isGrounded && !isJumping)
+		{
+			isJumping = true;
+			falling = false;
+			jumpTime = 0.0f;
+		}
+		if (isJumping)
+		{
+			float jumpForce = Mathf.Sqrt(jumpSpeed * -2 * (Physics2D.gravity.y * rb.gravityScale));
+			rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
 		}
 	}
 	public void HandleJump()
@@ -96,13 +129,24 @@ public class BetterJumps : MonoBehaviour
 			rb.velocity = new Vector2((velocity.x + 1) * 15, rb.velocity.y);
 
 	}
-	public void CalcTargetVelocity()
+	public void CalcTargetVelocity(float inputVelocity)
 	{
-
-		targetVelocity = 8.0f * Input.GetAxisRaw("Horizontal");
-		rb.velocity = new Vector2(targetVelocity, rb.velocity.y);
 		if (targetVelocity > 1) GetComponent<SpriteRenderer>().flipX = false;
 		if (targetVelocity < -1) GetComponent<SpriteRenderer>().flipX = true;
+		if (inputVelocity != 0)
+		{
+			if (accel < 8.0f)
+			{
+				accel += walkSpeed * Time.deltaTime;
+			}
+
+		}
+		else
+		{
+			accel = 0.5f;
+		}
+		targetVelocity = accel * inputVelocity;
+		rb.velocity = new Vector2(targetVelocity, rb.velocity.y);
 		// GetComponent<SpriteRenderer>().flipX = targetVelocity > 0;
 
 	}
@@ -116,7 +160,6 @@ public class BetterJumps : MonoBehaviour
 	{
 		if (isJumping)
 		{
-			Debug.Log("test");
 			isJumping = false;
 		}
 	}
