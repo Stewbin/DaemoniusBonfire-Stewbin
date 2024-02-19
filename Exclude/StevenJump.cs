@@ -1,5 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics.Contracts;
+using System.IO.Enumeration;
+using System.Runtime.ConstrainedExecution;
 using UnityEngine;
 
 public class StevenJump : MonoBehaviour 
@@ -9,19 +13,19 @@ public class StevenJump : MonoBehaviour
     private float DistanceToPeak;
     private float velocity_x = 10f;
     public Rigidbody2D rb;
+    
     private float BigJumpTime = 10f;
-    
     private float jumpTime = BigJumpTime;
-    
+   
     private boolean FacingRight = true;
     
     
-
-    void Start()
-    {
-        float velocity_y = 2 * MaxHeight * velocity_x / DistanceToPeak;
-        float gravity = -2 * MaxHeight * Math.Pow(velocity_x, 2) / Math.Pow(DistanceToPeak);
-    }
+    // Calculate the constants 
+    float velocity_y = 2 * MaxHeight * velocity_x / DistanceToPeak; // Initial y-velocity
+    const float gravity = -2 * MaxHeight * Math.Pow(velocity_x, 2) / Math.Pow(DistanceToPeak, 2); // Gravity, duh
+    float 
+    
+        
 
     void Update()
     {
@@ -30,11 +34,8 @@ public class StevenJump : MonoBehaviour
         // rb.velocity = direction * velocity_x; 
         
         // Increment x position method
-        Vector3 targetPosition = transform.position + Vector3(direction * velocity_x * Time.deltaTime, 0, 0);
+        Vector3 targetPosition = transform.position + Vector3.right * direction * velocity_x * Time.deltaTime;
         transform.position = targetPosition;
-
-        // Vertical movement
-        //float new_gravtiy = 
 
         if (direction == -1 && FacingRight)
         {
@@ -44,7 +45,11 @@ public class StevenJump : MonoBehaviour
         {
             flip();
         }
-
+       
+       // Vertical movement
+        //float new_gravtiy = 
+        
+        
         // Timed Jumps
         if (Input.GetKey(KeyCode.Space))
         {
@@ -66,5 +71,10 @@ public class StevenJump : MonoBehaviour
     {
         FacingRight = !FacingRight;
         transform.scale = Vector3(transform.scale.x, 1, 1);
+    }
+    
+    float calclateGravity(float pos);
+    {
+        return -2 * MaxHeight * Math.Pow(velocity_x, 2) / Math.Pow(DistanceToPeak, 2);
     }
 }
