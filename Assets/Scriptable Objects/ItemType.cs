@@ -9,7 +9,14 @@ public class ItemType : ScriptableObject
 	public string ItemName;
 	public int HealthDamageIncrease;
 	public bool CanStack;
-	
+	public  ItemCatergory itemCatergory;
+
 	
 }
 
+public enum ItemCatergory
+{
+	SWORD,
+	POWERUP,
+	
+}

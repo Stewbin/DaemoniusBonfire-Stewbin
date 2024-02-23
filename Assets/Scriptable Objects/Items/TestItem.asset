@@ -15,3 +15,4 @@ MonoBehaviour:
   ItemName: Test
   HealthDamageIncrease: 0
   CanStack: 0
+  itemCatergory: 1

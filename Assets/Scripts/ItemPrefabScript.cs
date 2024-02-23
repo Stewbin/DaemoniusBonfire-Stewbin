@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class ItemPrefabScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+	// Start is called before the first frame update
 
-    public int pid;  //assigned by spawn manager 
-    public ItemType itemType; // this one gets assigned by the editor 
-    void Start()
-    {
+	public int pid;  //assigned by spawn manager 
+	public ItemType itemType; // this one gets assigned by the editor 
+	public ItemCatergory itemCatergory;
+	void Start()
+	{
 
-    }
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
+	// Update is called once per frame
+	void Update()
+	{
 
-    }
+	}
 }
