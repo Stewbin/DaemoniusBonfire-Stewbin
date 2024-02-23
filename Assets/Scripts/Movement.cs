@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// X next week...
 public class Movement : MonoBehaviour
 {
-    [SerializeField]
+	[SerializeField]
 	private Vector2 velocity; //players x, y velocity
 	public float speedX = 10;
 	public float speedY = 8;
@@ -19,7 +20,7 @@ public class Movement : MonoBehaviour
 	public Animator animator;
 	public float targetVelocity;
 	
-    public void HandleDash(float estimateFrames, Vector2 playerLocation)
+	public void HandleDash(float estimateFrames, Vector2 playerLocation)
 	{
 		if (DashTime > estimateFrames) //change to the falling state
 		{
@@ -42,7 +43,7 @@ public class Movement : MonoBehaviour
 		DashTime++;
 
 	}
-    
+	
 	/// <summary>
 	/// handles the jump of the player
 	/// uses state machine. 
