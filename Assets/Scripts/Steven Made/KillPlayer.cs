@@ -29,5 +29,6 @@ public class KillPlayer : MonoBehaviour
     public void KillElkan()
     {
         SceneManager.LoadScene(CurrentScene);
+        Debug.Log("Elkan has died");
     }
 }

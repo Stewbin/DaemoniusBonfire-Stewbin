@@ -20,6 +20,4 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         }
         get {return _instance;}
     }
-
-
 }
