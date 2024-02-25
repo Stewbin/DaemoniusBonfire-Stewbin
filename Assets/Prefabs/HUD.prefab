@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 2772980352226902092}
   - component: {fileID: 2683770680977249389}
   m_Layer: 5
-  m_Name: Cutout
+  m_Name: Cutout Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

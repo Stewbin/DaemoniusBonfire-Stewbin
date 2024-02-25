@@ -12,8 +12,8 @@ public class MenuController : MonoBehaviour
 {
     [SerializeField]
     private string LastSave = "Steven"; // Last scene saved at (will be "Steven" by default)
-    private GameObject optionsPanel;
-    private GameObject titlePanel;
+    public GameObject optionsPanel;
+    public GameObject titlePanel;
 
     void Start()
     {
@@ -32,17 +32,17 @@ public class MenuController : MonoBehaviour
     {
         SceneManager.LoadScene(LastSave);
     }
-
-    public void ShowOptions()
-    {
-        optionsPanel.SetActive(true);
-        titlePanel.SetActive(false);
-        // Debug.Log("options was pressed");
-    }
     
     // Quits the game in a build
     public void QuitGame()
     {
         Application.Quit();
     }
+    
+    public void ShowOptions()
+    {
+        optionsPanel.SetActive(true);
+        titlePanel.SetActive(false);
+        // Debug.Log("options was pressed");
+    }     
 }
