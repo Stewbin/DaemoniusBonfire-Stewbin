@@ -39,10 +39,6 @@ public class BetterJumps : MonoBehaviour
 		{
 			falling = true;
 		}
-		// if (Input.GetKey(KeyCode.X))
-		// {
-		// 	HandleDash();
-		// }
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			SetJump();
@@ -84,11 +80,11 @@ public class BetterJumps : MonoBehaviour
 		float ogGrav = rb.gravityScale;
 		rb.gravityScale = 0f;
 		if (GetComponent<SpriteRenderer>().flipX)
-			rb.velocity = new Vector2(transform.localScale.x * -100.0f, rb.velocity.y);
+			rb.velocity = new Vector2(transform.localScale.x * -250.0f, rb.velocity.y);
 		else
-			rb.velocity = new Vector2(transform.localScale.x * 100.0f, rb.velocity.y);
+			rb.velocity = new Vector2(transform.localScale.x * 250.0f, rb.velocity.y);
 		dashing = true;
-		yield return new WaitForSeconds(1.0f);
+		yield return new WaitForSeconds(0.25f);
 		rb.velocity = Vector2.zero;
 		rb.gravityScale = ogGrav;
 		dashing = false;
