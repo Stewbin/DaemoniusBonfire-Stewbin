@@ -577,6 +577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pid: 0
   itemType: {fileID: 11400000, guid: 348b819974a4ba64c99919c7929cfc3e, type: 2}
+  itemCatergory: 0
 --- !u!50 &1355115533
 Rigidbody2D:
   serializedVersion: 4
@@ -1005,7 +1006,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8978726848943050059}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91d91436dd8a48e4e8a65a0b51a5b772, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ed789c8e5b49514cb840d0825411bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 9a6c4704c8cc4164d9e7d0b831cdb328, type: 2}
