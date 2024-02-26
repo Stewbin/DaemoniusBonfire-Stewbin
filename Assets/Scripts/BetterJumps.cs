@@ -36,7 +36,7 @@ public class BetterJumps : MonoBehaviour
 
 		// Debug.Log(isGrounded);
 		if (dashing) return;
-		// animator.SetBool("isJumping", isJumping || !isGrounded);
+		animator.SetBool("isJumping", isJumping || !isGrounded);
 		animator.SetFloat("walk", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
 
 		rb = GetComponent<Rigidbody2D>();
