@@ -714,6 +714,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor
       objectReference: {fileID: 0}
+    - target: {fileID: 1918704351306371598, guid: 1fcbb136101e2084782abe0a435a7f14, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fcbb136101e2084782abe0a435a7f14, type: 3}
 --- !u!1001 &7924549830596235549
@@ -767,9 +771,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7924549830143444494, guid: dda175eb98d8367458342f989bdb297a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7924549830143444498, guid: dda175eb98d8367458342f989bdb297a, type: 3}
       propertyPath: m_Name
       value: climbBeam
+      objectReference: {fileID: 0}
+    - target: {fileID: 7924549830143444498, guid: dda175eb98d8367458342f989bdb297a, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7924549830143444498, guid: dda175eb98d8367458342f989bdb297a, type: 3}
       propertyPath: m_IsActive
@@ -831,6 +843,14 @@ PrefabInstance:
     - target: {fileID: 8978726849126008392, guid: 130391dbbe527b74dbf9050fca3cedea, type: 3}
       propertyPath: m_Name
       value: MainCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 8978726849126008392, guid: 130391dbbe527b74dbf9050fca3cedea, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8978726849126008392, guid: 130391dbbe527b74dbf9050fca3cedea, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8978726849126008393, guid: 130391dbbe527b74dbf9050fca3cedea, type: 3}

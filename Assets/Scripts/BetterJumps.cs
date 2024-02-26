@@ -1,5 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+// using System.Diagnostics;
+
+// using System.Diagnostics;
 using UnityEngine;
 //testing to see if this works  aaa
 public class BetterJumps : MonoBehaviour
@@ -19,6 +22,7 @@ public class BetterJumps : MonoBehaviour
     bool dashing = false;
     public float walkSpeed;
     public float fallSpeed;
+    public float fallWeight = 1.0f;
     private float accel = 0.5f;
     void Start()
     {
@@ -29,8 +33,10 @@ public class BetterJumps : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        // Debug.Log(isGrounded);
         if (dashing) return;
-        animator.SetBool("isJumping", isJumping || !isGrounded);
+        // animator.SetBool("isJumping", isJumping || !isGrounded);
         animator.SetFloat("walk", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
 
         rb = GetComponent<Rigidbody2D>();
@@ -38,6 +44,12 @@ public class BetterJumps : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
         {
             falling = true;
+            isJumping = false;
+            fallWeight = 2.0f; //expirement
+        }
+        if (Input.GetKeyUp(KeyCode.S))
+        {
+            fallWeight = 1.0f; //expirement
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -68,11 +80,17 @@ public class BetterJumps : MonoBehaviour
         // rb.AddForce();
         // if (isGrounded)
         // 	falling = false;
+        isGrounded = IsGrounded();
+        falling = !isGrounded && !isJumping;
         if (dashing) return;
         if (falling || rb.velocity.y < 0) //this makes object heavy ;3
         {
 
-            rb.AddForce(Vector2.down * fallSpeed);
+            rb.AddForce(Vector2.down * fallSpeed * fallWeight);
+        }
+        else
+        {
+            fallWeight = 1.0f;
         }
     }
     public IEnumerator Dash()
@@ -107,10 +125,12 @@ public class BetterJumps : MonoBehaviour
     public void HandleJump()
     {
 
-        if (jumpTime >= 2.5)
+        if (jumpTime >= 1.5)
         {
             isJumping = false;
             falling = true;
+            isGrounded = false;
+            jumpTime = 0.0f;
             return;
         }
         jumpTime += Time.deltaTime;
@@ -146,12 +166,22 @@ public class BetterJumps : MonoBehaviour
         // GetComponent<SpriteRenderer>().flipX = targetVelocity > 0;
 
     }
-    private void OnCollisionStay2D(Collision2D other)
+    private bool IsGrounded()
     {
-        if (other.gameObject.tag == "floor")
-            isGrounded = true;
-
+        Vector2 position = transform.position;
+        Vector2 direction = Vector2.down;
+        float distance = 3.0f;
+        Debug.DrawRay(position, direction * 3.0f, Color.green); //debugging purposes
+        // Debug.Log(Physics2D.Raycast(position, direction, distance, LayerMask.GetMask("FloorMask")).);
+        // Debug.Log(Physics2D.Raycast(position, direction, distance, LayerMask.GetMask("FloorMask")).collider.gameObject.tag);
+        return Physics2D.Raycast(position, direction, distance, LayerMask.GetMask("FloorMask")).collider != null;
     }
+    // private void OnCollisionStay2D(Collision2D other)
+    // {
+    //     if (other.gameObject.tag == "floor")
+    //         isGrounded = true;
+
+    // }
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (isJumping)
@@ -159,10 +189,10 @@ public class BetterJumps : MonoBehaviour
             isJumping = false;
         }
     }
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "floor") //use a hashmap of values that are like a ground (or create ground layer)
-            isGrounded = false;
-    }
+    // private void OnCollisionExit2D(Collision2D other)
+    // {
+    //     if (other.gameObject.tag == "floor") //use a hashmap of values that are like a ground (or create ground layer)
+    //         isGrounded = false;
+    // }
 
 }
