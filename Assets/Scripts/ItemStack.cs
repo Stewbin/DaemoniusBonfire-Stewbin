@@ -49,7 +49,7 @@ public class ItemStack
     }
     public bool isFull()
     {
-        return sizeOfStack >= 10;
+        return sizeOfStack > 10;
     }
     public override string ToString()
     {
