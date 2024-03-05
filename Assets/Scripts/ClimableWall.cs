@@ -65,18 +65,6 @@ public class ClimableWall : MonoBehaviour
         if (other.CompareTag("climeBeam"))
         {
             CanClimb = true;
-            // Vector3 hit = other.contacts[0].normal;
-            // float angle = Vector3.Angle(hit, Vector3.up);
-            // // Debug.Log(angle);
-            // if (Mathf.Approximately(angle, 90) && Input.GetKey(KeyCode.F))
-            // {
-
-            //     rb.velocity = new Vector2(rb.velocity.x, 5.0f);
-            //     if (Input.GetKey(KeyCode.RightShift))
-            //         rb.velocity = new Vector2(rb.velocity.x, 0.0f);
-            //     // Debug.Log("can climb");
-            // }
-
         }
     }
     private void OnTriggerExit2D(Collider2D other)
