@@ -18,6 +18,7 @@ public class Controller : MonoBehaviour
 	public int jumpState = 1;
 	public Animator animator;
 	public float targetVelocity;
+	[SerializeField] private PlayerStats stats;
 	void Update()
 	{
 		//fixing bug I notcied when paused it still allowed flipping
@@ -96,15 +97,15 @@ public class Controller : MonoBehaviour
 
 
 		// Dash code
-		if (Input.GetKeyDown(KeyCode.LeftShift))
+		if (Input.GetKeyDown(KeyCode.LeftShift) && stats.CurrentStamina > 0)
 		{
 			animator.SetBool("dash", true);
 			Dash = true;
-
 		}
-		if (Dash)
+		if (Dash) // Can't these if-statements be combined? Questions for people smarter than me.
 		{
 			HandleDash(20, playerLocation);
+			stats.CurrentStamina -= 10f; // Stamina cost
 		}
 
 

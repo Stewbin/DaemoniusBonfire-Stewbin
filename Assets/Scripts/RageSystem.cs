@@ -24,7 +24,7 @@ public class RageSystem : MonoBehaviour
     void Update()
     {
         // Toggle 'Elkan is Mad' mode
-        if (Input.GetKeyDown(KeyCode.Z) || stats.CurrentRage == 0)
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             if (stats.currentState != States.Rage)
             {
@@ -36,6 +36,8 @@ public class RageSystem : MonoBehaviour
             }
                 
         }
+        // Turn to normal state if Rage == 0
+        if (stats.CurrentRage == 0) {stats.currentState = States.Normal;}
 
         // Burn through rage meter if in Mad mode
         if (stats.currentState == States.Rage)
