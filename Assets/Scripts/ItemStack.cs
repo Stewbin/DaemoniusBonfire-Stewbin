@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
 public class ItemStack
@@ -18,7 +19,7 @@ public class ItemStack
         sizeOfStack++;
 
     }
-    public ItemType useItem()
+    public ItemType useItem()   
     {
         if (item.CanStack)
             sizeOfStack--;
@@ -56,4 +57,8 @@ public class ItemStack
         return item.ItemName + ": " + sizeOfStack;
     }
 
+    public ItemType GetItem()
+    {
+        return item;
+    }
 }

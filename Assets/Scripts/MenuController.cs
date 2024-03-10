@@ -11,7 +11,7 @@ using UnityEngine.UIElements;
 public class MenuController : MonoBehaviour
 {
     [SerializeField]
-    private string LastSave = "Steven"; // Last scene saved at (will be "Steven" by default)
+    private int LastSave = 1; // Last scene saved at (will be "Steven" by default)
     private GameObject optionsPanel;
     private GameObject titlePanel;
 
