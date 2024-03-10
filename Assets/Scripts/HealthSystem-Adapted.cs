@@ -24,7 +24,7 @@ public class HealthSystemAdapted : MonoBehaviour
     {
         stats.currentHealth -= damage; 
 
-        if ( stats.currentHealth <= 0)
+        if (stats.currentHealth <= 0)
         {
             //Player Dies 
             death.KillElkan();

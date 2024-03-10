@@ -34,7 +34,7 @@ public class InventoryManager : ScriptableObject
         }
         for (int i = 0; i < items.Length; i++)
         {
-            if (items[i] == null)
+            if (items[i] == null) 
             {
                 items[i] = new ItemStack(item);
                 return true;
