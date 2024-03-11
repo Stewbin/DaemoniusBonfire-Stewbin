@@ -8,15 +8,5 @@ public class ItemPrefabScript : MonoBehaviour
 
 	public int pid;  //assigned by spawn manager 
 	public ItemType itemType; // this one gets assigned by the editor 
-	public ItemCatergory itemCatergory;
-	void Start()
-	{
-
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-
-	}
+	
 }

@@ -11,6 +11,8 @@ public class InventoryManager : ScriptableObject
 {
     // Start is called before the first frame update
     public ItemStack[] items = new ItemStack[30];
+
+
     private int mainHandPtr = 0; //ptr to your main hand location "ptr" being mem address because im a nerd
 
     /// <summary>
@@ -41,7 +43,7 @@ public class InventoryManager : ScriptableObject
             }
             else if (items[i].CompareID(item.ItemName) && item.CanStack && !items[i].isFull())
             {
-                items[i] = new ItemStack(item);
+                items[i].increaseStack(); //embarassing :skull:
                 return true;
             }
 
@@ -101,7 +103,7 @@ public class InventoryManager : ScriptableObject
     public StringBuilder TestDisplay()
     {
         StringBuilder t = new StringBuilder();
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 4; i++)
         {
             if (items[i] == null)
             {

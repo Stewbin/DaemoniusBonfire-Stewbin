@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 229891acd01eb3549bde0fa3f7f09c1d, type: 3}
-  m_Name: TestItem
+  m_Name: TestItem2
   m_EditorClassIdentifier: 
-  ItemName: Item1
+  ItemName: Item2
   HealthDamageIncrease: 0
   CanStack: 1
   itemCatergory: 1
-  sprite: {fileID: 7482667652216324306, guid: 2e6dd94006721674a9ac3129be1d8f05, type: 3}
