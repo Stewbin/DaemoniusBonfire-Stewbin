@@ -9,13 +9,7 @@ public class Inventory : MonoBehaviour
 {
     // Start is called before the first frame update
     public InventoryManager inventory;
-    public Text display;
     public GameObject displayPanel;
-
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
