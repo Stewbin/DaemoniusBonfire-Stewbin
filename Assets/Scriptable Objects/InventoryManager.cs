@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using TMPro;
+
 
 // using System.Numerics;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 [CreateAssetMenu(fileName = "InventoryManager", menuName = "Inventory/InventoryManager", order = 0)]
@@ -36,7 +39,7 @@ public class InventoryManager : ScriptableObject
         }
         for (int i = 0; i < items.Length; i++)
         {
-            if (items[i] == null) 
+            if (items[i] == null)
             {
                 items[i] = new ItemStack(item);
                 return true;
@@ -125,5 +128,24 @@ public class InventoryManager : ScriptableObject
         mainHandPtr += 1;
         mainHandPtr = mainHandPtr % 10; //make sure its 1-10
 
+    }
+    // public 
+    public void PanelDisplay(GameObject panel)
+    {
+        int i2 = 0;
+        foreach (Transform child in panel.transform)
+        {
+            Image a = child.GetChild(0).GetComponent<Image>();
+            TMP_Text t = child.GetChild(1).GetComponent<TMP_Text>();
+            if (items[i2] != null)
+            {
+                t.text = items[i2].SizeOfStack().ToString();
+                a.sprite = items[i2].GetItem().sprite;
+
+            }
+
+            i2++;
+
+        }
     }
 }

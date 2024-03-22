@@ -10,6 +10,7 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     public InventoryManager inventory;
     public Text display;
+    public GameObject displayPanel;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        display.text = inventory.TestDisplay().ToString();
+        inventory.PanelDisplay(displayPanel);
 
     }
     private void OnTriggerEnter2D(Collider2D other)

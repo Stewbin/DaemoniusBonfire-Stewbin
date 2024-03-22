@@ -16,3 +16,4 @@ MonoBehaviour:
   HealthDamageIncrease: 0
   CanStack: 1
   itemCatergory: 0
+  sprite: {fileID: 21300000, guid: a92ad559e27c5634281ff15622010278, type: 3}
