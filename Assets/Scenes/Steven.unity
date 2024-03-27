@@ -971,6 +971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveRange: 10
   MoveSpeed: 2
+  IsVertical: 0
 --- !u!4 &1517032865
 Transform:
   m_ObjectHideFlags: 0
@@ -1379,6 +1380,8 @@ GameObject:
   - component: {fileID: 2129691697}
   - component: {fileID: 2129691704}
   - component: {fileID: 2129691705}
+  - component: {fileID: 2129691706}
+  - component: {fileID: 2129691707}
   m_Layer: 0
   m_Name: Elkan
   m_TagString: Player
@@ -1567,6 +1570,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 2129691695}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d75f8957151b443a8443a1e46a2f40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocityY: 0
+  velocity: {x: 0, y: 0}
+  jumpTime: 0
+  isJumping: 0
+  isGrounded: 0
+  isDashing: 0
+  animator: {fileID: 2129691697}
+  falling: 0
+  jumpSpeed: 10
+  walkSpeed: 10
+  fallSpeed: 10
+  fallWeight: 10
+--- !u!114 &2129691706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129691695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8637bf11fcb89ea4bb003f106ff1d1d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1582,6 +1609,19 @@ MonoBehaviour:
   animator: {fileID: 2129691697}
   targetVelocity: 0
   stats: {fileID: 11400000, guid: 81997b75fa27afe46bd691c35814e446, type: 2}
+--- !u!114 &2129691707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129691695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafc3a7d9d5ae8e4ca82ed7fe21d065b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 2129691700}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
