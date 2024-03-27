@@ -290,6 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98ae338f02f0eb47881b8a17fed8aa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FlameThrowerLength: 15
   Fire: {fileID: 941283923}
 --- !u!4 &437541695
 Transform:

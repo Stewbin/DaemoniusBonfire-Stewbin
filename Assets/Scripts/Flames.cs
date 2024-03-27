@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Flames : MonoBehaviour
 {
+    public int FlameThrowerLength;
     // Start is called before the first frame update
     public ParticleSystem Fire;
 
@@ -17,18 +18,11 @@ public class Flames : MonoBehaviour
     void Update()
     {
         Debug.DrawRay(transform.position, transform.right * 10, Color.green);
-        if (Physics2D.Raycast(transform.position, transform.right, 10).collider != null)
+        if (Physics2D.Raycast(transform.position, transform.right, FlameThrowerLength).collider != null &&
+                Physics2D.Raycast(transform.position, transform.right, FlameThrowerLength).collider.gameObject.tag == "Player")
         {
 
-            Collider2D c = Physics2D.Raycast(transform.position, transform.right * 4, 10).collider;
-            if (c.gameObject.tag == "Player")
-            {
-                Fire.Play();
-            }
-            else
-            {
-                Fire.Stop();
-            }
+            Fire.Play();
         }
         else
         {
