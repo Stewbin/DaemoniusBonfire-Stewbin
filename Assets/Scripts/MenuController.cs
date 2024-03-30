@@ -25,7 +25,8 @@ public class MenuController : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Steven"); // Loads the 2nd scene (theoretically)
+        SceneManager.LoadScene("Gameplay"); // Loads the 2nd scene (theoretically)
+        SceneManager.LoadSceneAsync("Steven", LoadSceneMode.Additive);
     }
 
     public void Continue()

@@ -42,5 +42,21 @@ public class MoveBackandForth : MonoBehaviour
     { return IsVertical; }
     public float GetMoveSpeed()
     { return MoveSpeed; }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.transform.SetParent(this.transform);
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+         if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.transform.SetParent(null);
+        }
+    }
     
 }

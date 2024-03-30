@@ -18,6 +18,11 @@ public class PlayerStats : ScriptableObject
     public float CurrentStamina; 
 
     public States currentState;
+
+/*
+    public SceneDetails LastLoadedScene;
+    public SceneDetails CurrentScene;
+*/
 }
 
 public enum States
