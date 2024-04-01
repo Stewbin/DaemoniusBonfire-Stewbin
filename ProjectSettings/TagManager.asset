@@ -9,6 +9,7 @@ TagManager:
   - InstaDeath
   - item
   - climeBeam
+  - movingFloor
   layers:
   - Default
   - TransparentFX
