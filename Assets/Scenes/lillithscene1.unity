@@ -292,6 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FlameThrowerLength: 15
   Fire: {fileID: 941283923}
+  PlayerStats: {fileID: 11400000, guid: 81997b75fa27afe46bd691c35814e446, type: 2}
 --- !u!4 &437541695
 Transform:
   m_ObjectHideFlags: 0
@@ -3976,7 +3977,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    range: {x: 0, y: 1}
+    range: {x: 1111, y: 1}
     separateAxes: 0
   RotationBySpeedModule:
     enabled: 1
@@ -4150,7 +4151,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 1, g: 0.3265955, b: 0, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -4395,7 +4396,7 @@ ParticleSystem:
     serializedVersion: 2
     inside: 1
     outside: 0
-    enter: 0
+    enter: 1
     exit: 0
     colliderQueryMode: 0
     radiusScale: 1
