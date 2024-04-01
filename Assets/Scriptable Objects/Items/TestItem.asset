@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 229891acd01eb3549bde0fa3f7f09c1d, type: 3}
+  m_Script: {fileID: 11500000, guid: adfb06a4d0669b6409f362c88e9e42fc, type: 3}
   m_Name: TestItem
   m_EditorClassIdentifier: 
-  ItemName: Item1
-  HealthDamageIncrease: 0
-  CanStack: 1
-  itemCatergory: 1
-  sprite: {fileID: 21300000, guid: 9340535ac179b384c801fc901ca97ae4, type: 3}
+  pid: 0
+  itemType: {fileID: 0}

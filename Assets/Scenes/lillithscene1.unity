@@ -5913,7 +5913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pid: 0
-  itemType: {fileID: 11400000, guid: 348b819974a4ba64c99919c7929cfc3e, type: 2}
+  itemType: {fileID: 11400000, guid: bdda08b3aabc31c408b8b7a13fca9077, type: 2}
 --- !u!50 &1355115533
 Rigidbody2D:
   serializedVersion: 4
