@@ -6,7 +6,7 @@ public class MoveBackandForth : MonoBehaviour
 {
     [SerializeField] private float MoveRange;
     [SerializeField] private float MoveSpeed;
-    [SerializeField] private bool Vertical; // Do you want Vertical motion?
+    [SerializeField] private bool IsVertical; // Do you want Vertical motion?
 
     private float Direction = 1;
     private Vector3 StartPosition;
@@ -16,13 +16,13 @@ public class MoveBackandForth : MonoBehaviour
     void Start()
     {
         StartPosition = transform.position;
-        TargetPosition = StartPosition +  (MoveRange * Direction * AxisOfMotion);
+        TargetPosition = StartPosition + (MoveRange * Direction * AxisOfMotion);
     }
 
     void Update()
     {
         // Evaluate axis of motion
-        AxisOfMotion = Vertical ? Vector3.up : Vector3.right;
+        AxisOfMotion = IsVertical ? Vector3.up : Vector3.right;
 
         // Move towards the end position
         float Step = Time.deltaTime * MoveSpeed;
@@ -37,4 +37,26 @@ public class MoveBackandForth : MonoBehaviour
             TargetPosition = StartPosition + (MoveRange * Direction * AxisOfMotion);
         } 
     }
+
+    public bool GetIsVertical()
+    { return IsVertical; }
+    public float GetMoveSpeed()
+    { return MoveSpeed; }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.transform.SetParent(this.transform);
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+         if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.transform.SetParent(null);
+        }
+    }
+    
 }
