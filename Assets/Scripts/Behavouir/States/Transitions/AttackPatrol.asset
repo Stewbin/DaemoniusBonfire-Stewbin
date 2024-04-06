@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ce2a6a3cc7f41a40ba5fb4fb54541b1, type: 3}
-  m_Name: PatrolAttack
+  m_Name: AttackPatrol
   m_EditorClassIdentifier: 
   Decision: {fileID: 11400000, guid: da79cb0d9cf30ec4da85af36e13a488b, type: 2}
-  TrueState: {fileID: 11400000, guid: ab442cbb700a9a84c835e4ceb03765e2, type: 2}
+  TrueState: {fileID: 11400000, guid: 9305d2d43b8d8924ba5d29c614eab984, type: 2}
   FalseState: {fileID: 11400000, guid: 7a6be1fb475146a47905e7f9f17bb2b0, type: 2}

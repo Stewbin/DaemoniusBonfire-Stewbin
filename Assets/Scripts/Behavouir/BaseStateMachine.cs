@@ -42,6 +42,7 @@ public class BaseStateMachine : MonoBehaviour
 	private void Update()
 	{
 		CurrentState.Execute(this);
+		Debug.Log(CurrentState.ToString());
 	}
 
 }
