@@ -25,7 +25,6 @@ public class CameraZoomIn : MonoBehaviour
     {
         if(obj.CompareTag("Player"))
         {
-            Debug.Log("Entered.");
             // Stop current running coroutine
             StopAllCoroutines();
             // Blend into zoomed in state
@@ -37,7 +36,6 @@ public class CameraZoomIn : MonoBehaviour
 
     void OnTriggerExit2D()
     {
-        Debug.Log("Exited.");
         // Stop current running coroutine
         StopAllCoroutines();
         // Blend into zoomed out state
@@ -48,14 +46,11 @@ public class CameraZoomIn : MonoBehaviour
 
     IEnumerator BlendState(float TargetZoom)
     {
-        Debug.Log("Coroutine stared.");
         float currentZoom = vcam.m_Lens.OrthographicSize;
         for (float t = 0; t < 1; t += Time.deltaTime * TransitionSpeed)
         {
-            Debug.Log("Coroutine iteration: " + t);
             vcam.m_Lens.OrthographicSize = Mathf.Lerp(currentZoom, TargetZoom, t);
             yield return null;
         }
-        Debug.Log("Coroutine completed.");
     }
 }
