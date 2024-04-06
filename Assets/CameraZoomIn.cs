@@ -10,24 +10,15 @@ public class CameraZoomIn : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera vcam;
     [SerializeField] private float MinZoom = 2f;
     [SerializeField] private float TransitionSpeed = 1.0f;
-    private LensSettings maxZoomState;
-    private LensSettings minZoomState;
+    private float MaxZoom;
 
     void Start()
     {
         // Record current (default) camera state
-        maxZoomState = vcam.m_Lens;
+        MaxZoom = vcam.m_Lens.OrthographicSize;
 
         // Make sure MinZoom is between 1 and our current zoom size
-        //MinZoom = Mathf.Clamp(MinZoom, 1f, maxZoomState.OrthographicSize);
-
-        // Create a new canera state where ortho/zoom size is changed
-        minZoomState = new()
-        {
-            OrthographicSize = MinZoom
-        };
-        // Make sure the new settings are "sane"
-        minZoomState.Validate(); 
+        MinZoom = Mathf.Clamp(MinZoom, 1f, MaxZoom);
     }
 
     void OnTriggerEnter2D(Collider2D obj)
@@ -39,7 +30,7 @@ public class CameraZoomIn : MonoBehaviour
             StopAllCoroutines();
             // Blend into zoomed in state
             StartCoroutine(
-                BlendState(maxZoomState, minZoomState)
+                BlendState(MinZoom)
             );
         }
     }
@@ -51,17 +42,20 @@ public class CameraZoomIn : MonoBehaviour
         StopAllCoroutines();
         // Blend into zoomed out state
         StartCoroutine(
-            BlendState(minZoomState, maxZoomState)
+            BlendState(MaxZoom)
         );
     }
 
-    IEnumerator BlendState(LensSettings lensA, LensSettings lensB)
+    IEnumerator BlendState(float TargetZoom)
     {
-        Debug.Log("Running running running.");
+        Debug.Log("Coroutine stared.");
+        float currentZoom = vcam.m_Lens.OrthographicSize;
         for (float t = 0; t < 1; t += Time.deltaTime * TransitionSpeed)
         {
-            LensSettings.Lerp(lensA, lensB, t);
+            Debug.Log("Coroutine iteration: " + t);
+            vcam.m_Lens.OrthographicSize = Mathf.Lerp(currentZoom, TargetZoom, t);
+            yield return null;
         }
-        yield return null;
+        Debug.Log("Coroutine completed.");
     }
 }
