@@ -52,7 +52,7 @@
         "Temp/": true
     },
     "dotnet.preferCSharpExtension": true,
-    "dotnet.defaultSolution": "platformer(1).sln",
+    "dotnet.defaultSolution": "platformer1-Stewbin.sln",
     "omnisharp.sdkPath": "C:\\Program Files\\dotnet\\dotnet.exe",
     "dotnetAcquisitionExtension.existingDotnetPath": [
         "C:/Program Files/dotnet/dotnet.exe"

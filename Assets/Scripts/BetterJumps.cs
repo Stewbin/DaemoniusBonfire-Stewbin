@@ -95,7 +95,7 @@ public class BetterJumps : MonoBehaviour
         if (falling || rb.velocity.y < 0) //this makes object heavy ;3
         {
 
-            rb.AddForce(Vector2.down * fallSpeed * fallWeight);
+            rb.AddForce(fallSpeed * fallWeight * Vector2.down);
         }
         else
         {

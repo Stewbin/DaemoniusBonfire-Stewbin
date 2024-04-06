@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Christian/Christian.unity
     guid: 4da097266f4557b4b8a392eaa9b7b970
   - enabled: 1
-    path: Assets/Scenes/PersistentGameplay.unity
+    path: Assets/Scenes/Persistents.unity
     guid: ceffe77c30eb5654a9557f4cf41ab3e6
   - enabled: 1
     path: Assets/Scenes/ExpirementalLightingLevel1.unity
