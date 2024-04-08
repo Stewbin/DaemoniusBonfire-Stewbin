@@ -20,7 +20,7 @@ public class KillPlayer : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         // Will kill player if they touch something tagged InstaDeath
-        if(collision.gameObject.la)
+        if(collision.CompareTag("InstaDeath"))
         {
             KillElkan();   
         }
