@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e47d97f46b62f46b6eb1246def15ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overlay: {fileID: 0}
+  overlay: {fileID: 9035263233083222342, guid: db3baf49dbdbdbc45bdb9c364a288dc4, type: 3}
   paused: 0
 --- !u!114 &8978726849126008384
 MonoBehaviour:
