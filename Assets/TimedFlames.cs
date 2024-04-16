@@ -7,12 +7,8 @@ public class TimedFlames : MonoBehaviour
     // Stole these from Flame
     public ParticleSystem Fire;
     //public PlayerStats PlayerStats;
-    public float FlamePeriod;
+    public float RestPeriod;
     public float FlameDuration;
-    [SerializeField] 
-    private float waitTime;
-    [SerializeField] 
-    private float fireTime;
     void Start()
     {
         Fire.transform.position = transform.position;
@@ -21,29 +17,13 @@ public class TimedFlames : MonoBehaviour
 
     IEnumerator ShootFlamesRegularly()   
     {
-        fireTime = 0;
-        waitTime = 0;
         while(true)
         {
-            if (waitTime < FlamePeriod)
-            {
-                waitTime += Time.deltaTime;
-            }
-            else 
-            {
-               if (fireTime < FlameDuration)
-                {
-                    Fire.Play();
-                    fireTime+= Time.deltaTime;
-                    yield return null;
-                }
-                else
-                {
-                    fireTime= 0;
-                    Fire.Stop();
-                    waitTime = 0;
-                } 
-                yield return null;
-            }
+            Fire.Play(); // Activate animation
+            yield return new WaitForSeconds(FlameDuration); // Wait for FlameDuration seconds
+                    
+            Fire.Stop(); // Stop animation
+            yield return new WaitForSeconds(RestPeriod); // Wait for RestPeriod seconds
+        }
     }
 }
