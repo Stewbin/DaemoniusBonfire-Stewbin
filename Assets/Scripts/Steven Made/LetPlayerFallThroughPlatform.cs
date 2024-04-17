@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
-public class DetectPlayer : MonoBehaviour
+public class LetPlayerFallThroughPlatform : MonoBehaviour
 {
     [SerializeField]
     private PlatformEffector2D effector;
-    public float WaitTime = 0.2f;
+    public float WaitTime = 0.1f;
     float waitTimer;
     //private Animator animator;    
     private GameObject Player;
@@ -42,7 +42,7 @@ public class DetectPlayer : MonoBehaviour
             }
         } 
 
-        if(Input.GetKeyUp(KeyCode.S) && IsFalling)
+        if(Input.GetKeyUp(KeyCode.S) && !IsFalling)
         {
             effector.rotationalOffset = 0; // Reset platform detection after release S
             waitTimer = WaitTime; // Reset counter 
