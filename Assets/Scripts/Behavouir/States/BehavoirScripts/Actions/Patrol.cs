@@ -7,12 +7,13 @@ public class Patrol : Action
 {
 	public override void Execute(BaseStateMachine stateMachine)
 	{
-		//patrol state 
+		//patrol state
 		Debug.Log("patrolling");
-		stateMachine.GetComponent<SpriteRenderer>().color = Color.green;
+		stateMachine.GetComponent<PatrollScript>().Move();
 	}
-    public override string ToString()
-    {
-        return "patrolling state";
-    }
+
+	public override string ToString()
+	{
+		return "patrolling state";
+	}
 }
