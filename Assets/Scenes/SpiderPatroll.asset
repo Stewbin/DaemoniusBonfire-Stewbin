@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbbb59aeb4c8fdc4c867eb0d7f5fbae0, type: 3}
   m_Name: SpiderPatroll
   m_EditorClassIdentifier: 
-  ApporachingIndex: 13
-  basePoints:
-  - {x: -8.2, y: 0}
-  - {x: 11, y: 0}
-  moveSpeed: 2
-  moveTowards: {x: 0, y: 0}
+  ApporachingIndex: 0
+  basePoints: []
+  moveSpeed: 5
+  moveTowards: {x: 32, y: -1.4212812}
