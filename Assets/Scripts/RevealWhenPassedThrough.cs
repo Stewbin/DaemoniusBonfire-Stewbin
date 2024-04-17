@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RevealWhenPassedThrough : MonoBehaviour
 {
-    private SpriteRenderer sprite;
+    [SerializeField] private SpriteRenderer sprite;
     private Color OrigiColor, TargetColor;
     [SerializeField] private float TransitionSpeed = 1.0f;
     private float t = 0;

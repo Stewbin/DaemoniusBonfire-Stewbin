@@ -15,9 +15,12 @@ public class Flames : MonoBehaviour
     }
     void Update()
     {
-        Debug.DrawRay(transform.position, transform.right * 10, Color.green);
-        if (Physics2D.Raycast(transform.position, transform.right, FlameThrowerLength).collider != null &&
-                Physics2D.Raycast(transform.position, transform.right, FlameThrowerLength).collider.gameObject.tag == "Player")
+        Vector3 DirectionVector = transform.right * transform.localScale.x; 
+        // The direction will flip if you negate any scales
+
+        Debug.DrawRay(transform.position, DirectionVector * 10, Color.green);
+        if (Physics2D.Raycast(transform.position, DirectionVector, FlameThrowerLength).collider != null &&
+                Physics2D.Raycast(transform.position, DirectionVector, FlameThrowerLength).collider.gameObject.tag == "Player")
             Fire.Play();
         else
             Fire.Stop();
