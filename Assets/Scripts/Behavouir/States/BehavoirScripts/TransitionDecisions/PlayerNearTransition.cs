@@ -8,6 +8,6 @@ public class PlayerNearTransition : Decision
     // Start is called before the first frame update
     public override bool Decide(BaseStateMachine state)
     {
-        return state.GetComponent<EyeSensor>().isNear();
+        return state.GetComponent<EyeSensor>().NearTarget();
     }
 }
