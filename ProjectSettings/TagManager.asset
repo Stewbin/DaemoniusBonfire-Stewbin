@@ -10,6 +10,7 @@ TagManager:
   - item
   - climeBeam
   - movingFloor
+  - spider
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - FloorMask
   - Water
   - UI
-  - 
+  - damageLayer
   - 
   - 
   - 
