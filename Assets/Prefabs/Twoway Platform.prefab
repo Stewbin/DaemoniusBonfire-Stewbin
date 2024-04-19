@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3374764232889745478}
   - component: {fileID: 716990470427020250}
   - component: {fileID: 2218250595789539020}
-  - component: {fileID: 4051840286476313512}
   m_Layer: 3
   m_Name: Twoway Platform
   m_TagString: floor
@@ -151,17 +150,3 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!114 &4051840286476313512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9144592577751354597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e257d26bbe23f947b6ed5ec2e27a0ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effector: {fileID: 0}
-  WaitTime: 0.1

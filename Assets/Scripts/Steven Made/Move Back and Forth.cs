@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class MoveBackandForth : MonoBehaviour
@@ -36,6 +37,10 @@ public class MoveBackandForth : MonoBehaviour
             // Recalculate TargetPosition
             TargetPosition = StartPosition + (MoveRange * Direction * AxisOfMotion);
         } 
+
+        // Show range of motion
+        Debug.DrawRay(StartPosition, MoveRange * AxisOfMotion, Color.green); // Forward
+        Debug.DrawRay(StartPosition, -MoveRange * AxisOfMotion, Color.green); // Back
     }
 
     public bool GetIsVertical()
@@ -43,6 +48,8 @@ public class MoveBackandForth : MonoBehaviour
     public float GetMoveSpeed()
     { return MoveSpeed; }
 
+    // Make player move with platform 
+    
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
